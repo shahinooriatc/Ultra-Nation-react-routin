@@ -9,7 +9,9 @@ const Countries = (props) => {
             <div className="countries text-center">
                 <img className='flagsize' src={flag} alt="Image Loding" />
                 <h4> {name}</h4>
-                <Link to={`/CountryDetails/${name}`}><button className='seeDetails'>See Details</button></Link>
+                <Link to={`/CountryDetails/${name}`}>
+                    <button className='seeDetails'>See Details</button>
+                </Link>
             </div>
         </div>
     );
