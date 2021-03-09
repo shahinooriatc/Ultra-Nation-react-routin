@@ -1,0 +1,22 @@
+.countries {
+  background-image: url(../../background/backd.jpg);
+  height: 180px;
+  border: 2px solid gray;
+  margin: 30px;
+  background-color: cadetblue;  
+  border-radius: 5px;
+  box-shadow: 4px 4px 10px;
+}
+.flagsize {
+  width: 100px;
+  max-height: 75px;
+  margin: 10px 0px;
+  border-radius: 5px;
+}
+.seeDetails{
+  margin: 10px;
+  padding: 5px;
+  color:coral;
+  background-color: midnightblue;
+  border-radius: 10px;
+}

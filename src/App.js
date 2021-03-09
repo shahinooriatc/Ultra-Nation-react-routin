@@ -1,54 +1,44 @@
-import logo from './logo.svg';
+import React from "react";
+import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faCoffee } from '@fortawesome/free-solid-svg-icons';
-import Header from './Component/Header/Header';
-
 import Home from './Component/Home/Home';
-import About from './Component/About/About';
-import User from './Component/User/User';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+
+import NoMatch from "./Component/NoMatch/NoMatch";
+import CountryDetails from "./Component/CountryDetails/CountryDetails";
 
 function App() {
   return (
-    <div className="App">
-      <Header></Header>
-      <Router>
-        <ul className='menu'>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/About">About</Link>
-          </li>
-          <li>
-            <Link to="/user">Users</Link>
-          </li>
-          <button to="/button">buton</button>
-        </ul>
-        <Switch>
-          <Route path='/' exact component='Home'>
-            <Home />
-          </Route>
-          <Route path='/buon'>
+    
+    <Router>
 
-          </Route>
-          <Route path='/about' component='About'>
-            <About />
-          </Route>
-          <Route path='/user' component='User'>
-            <User />
-          </Route>
-        </Switch>
-      </Router>
+    <Switch>
 
-    </div>
+      <Route path='/home'>
+        <Home />
+      </Route>
+
+      <Route path='/CountryDetails/:countryname'>
+        <CountryDetails/>
+      </Route>
+
+
+      {/* <Route path='/CountryDetails/:CountryId'>
+        <CountryDetails/>
+      </Route> */}
+
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path='*'>
+        <NoMatch />
+      </Route>
+    </Switch>
+
+  </Router>
+
+
+
   );
 }
 export default App;
